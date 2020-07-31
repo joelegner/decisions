@@ -6,4 +6,4 @@
 
 ## Screens
 
-![Screens](img/yed/screens.png)
+<img src="img/yed/screens.png" width="200">
