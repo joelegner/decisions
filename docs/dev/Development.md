@@ -1,3 +1,5 @@
+![](img/raster/logo.png)
+
 # Development Documentation
 
 ## Class Diagram
@@ -10,7 +12,7 @@
 
 ## Program Start
 
-1. Initiate `app`.
+1. The `__main__()` function initiate an `app`.
 
 1. `app` initiates `controller`.
 
