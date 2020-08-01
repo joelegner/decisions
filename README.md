@@ -1,3 +1,5 @@
+![](docs/dev/img/raster/logo.png)
+
 # decisions
 
 ## Overview

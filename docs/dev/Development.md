@@ -1,5 +1,3 @@
-![](img/raster/logo.png)
-
 # Development Documentation
 
 ## Class Diagram
