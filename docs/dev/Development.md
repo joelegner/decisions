@@ -25,3 +25,7 @@
 1. `controller` calls `view.event_loop()`.
 
 From here out the program's behavior is dictated by the event that occurs. Events are caught by the `view` which calls a function in the `controller`. The `controller` manipulates the `model` as required. It refreshes the `view` after any change to the model, such as loading it from disk, saving it, or changing a property.
+
+## Documentation Color Pallette
+
+<https://flatuicolors.com/palette/us>
