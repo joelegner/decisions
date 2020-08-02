@@ -16,4 +16,4 @@ build: clean
 .PHONY: clean
 clean:
 	@echo "Cleaning build directory."
-	rm -Rf build/*
+	find ./build -exec rm {} \;

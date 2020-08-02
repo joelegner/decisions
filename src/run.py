@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # TODO: Send argv to the _run() function
     logging.basicConfig(filename="decisions.log",
                         filemode='a',
-                        format='%(asctime)s.%(msecs)d %(name)s %(levelname)s %(message)s',
+                        format='%(asctime)s.%(msecs)d %(filename)s:%(lineno)s %(levelname)s %(message)s',
                         datefmt='%H:%M:%S',
                         level=logging.DEBUG)
     logging.info("Starting Qt application")

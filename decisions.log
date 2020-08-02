@@ -6,3 +6,70 @@
 12:59:13.203 root INFO Randomizing the label
 12:59:13.602 root INFO Randomizing the label
 12:59:13.978 root INFO Randomizing the label
+13:04:43.444 run.py INFO Starting Qt application
+13:04:43.507 run.py INFO Show window
+13:04:44.833 mainwin.py INFO Randomizing the label
+13:04:45.522 mainwin.py INFO Randomizing the label
+13:05:27.534 run.py 14 INFO Starting Qt application
+13:05:27.599 run.py 18 INFO Show window
+13:05:28.963 mainwin.py 46 INFO Randomizing the label
+13:05:29.316 mainwin.py 46 INFO Randomizing the label
+13:05:29.604 mainwin.py 46 INFO Randomizing the label
+13:05:47.344 run.py:14 INFO Starting Qt application
+13:05:47.405 run.py:18 INFO Show window
+13:05:48.618 mainwin.py:46 INFO Randomizing the label
+13:05:48.808 mainwin.py:46 INFO Randomizing the label
+13:05:48.980 mainwin.py:46 INFO Randomizing the label
+13:13:03.640 run.py:14 INFO Starting Qt application
+13:13:03.710 run.py:18 INFO Show window
+13:13:06.317 mainwin.py:49 INFO Randomizing the label
+13:14:05.511 run.py:14 INFO Starting Qt application
+13:14:05.571 run.py:18 INFO Show window
+13:14:06.972 mainwin.py:50 INFO Randomizing the label
+13:14:07.405 mainwin.py:50 INFO Randomizing the label
+13:14:54.325 run.py:14 INFO Starting Qt application
+13:14:54.386 run.py:18 INFO Show window
+13:15:00.366 mainwin.py:50 INFO Randomizing the label
+13:15:00.792 mainwin.py:50 INFO Randomizing the label
+13:15:00.967 mainwin.py:50 INFO Randomizing the label
+13:15:01.159 mainwin.py:50 INFO Randomizing the label
+13:15:52.74 run.py:14 INFO Starting Qt application
+13:15:52.143 run.py:18 INFO Show window
+13:15:55.706 mainwin.py:50 INFO Randomizing the label
+13:15:56.425 mainwin.py:50 INFO Randomizing the label
+13:15:56.771 mainwin.py:50 INFO Randomizing the label
+13:15:56.964 mainwin.py:50 INFO Randomizing the label
+13:16:29.573 run.py:14 INFO Starting Qt application
+13:16:29.638 run.py:18 INFO Show window
+13:16:34.681 mainwin.py:50 INFO Randomizing the label
+13:16:35.96 mainwin.py:50 INFO Randomizing the label
+13:16:55.330 run.py:14 INFO Starting Qt application
+13:16:55.389 run.py:18 INFO Show window
+13:16:56.899 mainwin.py:51 INFO Randomizing the label
+13:17:03.935 run.py:14 INFO Starting Qt application
+13:17:03.998 run.py:18 INFO Show window
+13:17:08.285 mainwin.py:51 INFO Randomizing the label
+13:17:08.685 mainwin.py:51 INFO Randomizing the label
+13:17:08.893 mainwin.py:51 INFO Randomizing the label
+13:17:09.37 mainwin.py:51 INFO Randomizing the label
+13:17:09.213 mainwin.py:51 INFO Randomizing the label
+13:18:12.766 run.py:14 INFO Starting Qt application
+13:18:12.827 run.py:18 INFO Show window
+13:18:14.273 mainwin.py:51 INFO Randomizing the label
+13:18:14.652 mainwin.py:51 INFO Randomizing the label
+13:18:14.844 mainwin.py:51 INFO Randomizing the label
+13:18:15.4 mainwin.py:51 INFO Randomizing the label
+13:18:37.433 run.py:14 INFO Starting Qt application
+13:18:37.493 run.py:18 INFO Show window
+13:18:39.250 mainwin.py:51 INFO Randomizing the label
+13:18:39.662 mainwin.py:51 INFO Randomizing the label
+13:18:39.836 mainwin.py:51 INFO Randomizing the label
+13:19:13.752 run.py:14 INFO Starting Qt application
+13:19:13.834 run.py:18 INFO Show window
+13:19:29.191 run.py:14 INFO Starting Qt application
+13:19:29.270 run.py:18 INFO Show window
+13:19:30.861 mainwin.py:30 INFO Randomizing the label
+13:19:31.293 mainwin.py:30 INFO Randomizing the label
+13:19:31.671 mainwin.py:30 INFO Randomizing the label
+13:19:31.943 mainwin.py:30 INFO Randomizing the label
+13:19:32.135 mainwin.py:30 INFO Randomizing the label
