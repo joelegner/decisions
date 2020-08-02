@@ -73,3 +73,48 @@
 13:19:31.671 mainwin.py:30 INFO Randomizing the label
 13:19:31.943 mainwin.py:30 INFO Randomizing the label
 13:19:32.135 mainwin.py:30 INFO Randomizing the label
+13:20:35.810 run.py:14 INFO Starting Qt application
+13:20:35.893 run.py:18 INFO Show main_window
+13:20:38.24 mainwin.py:30 INFO Randomizing the label
+13:20:38.328 mainwin.py:30 INFO Randomizing the label
+13:20:38.487 mainwin.py:30 INFO Randomizing the label
+13:20:38.664 mainwin.py:30 INFO Randomizing the label
+13:24:04.153 run.py:14 INFO Starting Qt application
+13:24:04.234 run.py:20 INFO Show main_window
+13:24:05.762 mainwin.py:30 INFO Randomizing the label
+13:24:06.181 mainwin.py:30 INFO Randomizing the label
+13:24:06.389 mainwin.py:30 INFO Randomizing the label
+13:24:21.310 run.py:14 INFO Starting Qt application
+13:24:21.391 run.py:20 INFO Show main_window
+13:24:21.441 run.py:25 ERROR Exception: division by zero
+13:25:00.539 run.py:14 INFO Starting Qt application
+13:25:00.617 run.py:20 INFO Show main_window
+13:25:00.665 run.py:25 ERROR Exception: division by zero
+13:27:19.273 run.py:14 INFO Starting Qt application
+13:27:19.352 run.py:20 INFO Show main_window
+13:27:38.697 run.py:15 INFO Starting Qt application
+13:27:38.778 run.py:21 INFO Show main_window
+13:27:38.829 run.py:32 ERROR EXCEPTION IN (build/src/run.py, LINE 23 "d = 4/0"): division by zero
+13:28:17.587 run.py:15 INFO Starting Qt application
+13:28:17.670 run.py:21 INFO Show main_window
+13:28:17.720 run.py:32 ERROR build/src/run.py:23 "d = 4/0"): division by zero
+13:29:40.357 run.py:15 INFO Starting Qt application
+13:29:40.440 run.py:21 INFO Show main_window
+13:29:41.986 mainwin.py:30 INFO Randomizing the label
+13:29:42.179 mainwin.py:30 INFO Randomizing the label
+13:29:42.355 mainwin.py:30 INFO Randomizing the label
+13:29:49.924 run.py:15 INFO Starting Qt application
+13:29:50.12 run.py:21 INFO Show main_window
+13:29:50.68 run.py:33 ERROR build/src/run.py:23 "d = 4/0"): division by zero
+13:30:22.139 run.py:15 INFO Starting Qt application
+13:30:22.223 run.py:21 INFO Show main_window
+13:30:22.272 run.py:33 ERROR build/src/run.py:23 "d = 4/0"): division by zero
+13:30:35.216 run.py:15 INFO Starting Qt application
+13:30:35.294 run.py:21 INFO Show main_window
+13:30:35.344 run.py:33 ERROR build/src/run.py:23 "d = 4/0"): division by zero
+13:31:23.638 run.py:27 INFO Starting Qt application
+13:31:23.717 run.py:33 INFO Show main_window
+13:31:23.771 run.py:16 ERROR build/src/run.py:35 "d = 4/0"): division by zero
+13:31:43.340 run.py:27 INFO Starting Qt application
+13:31:43.418 run.py:33 INFO Show main_window
+13:31:43.467 run.py:16 ERROR build/src/run.py:35 "d = 4/0"): division by zero

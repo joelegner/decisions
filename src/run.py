@@ -2,6 +2,19 @@ from PySide2 import QtWidgets
 import sys
 from view.mainwin import MainWin
 import logging
+import linecache
+
+
+def log_error():
+    exc_type, exc_obj, tb = sys.exc_info()
+    f = tb.tb_frame
+    lineno = tb.tb_lineno
+    filename = f.f_code.co_filename
+    linecache.checkcache(filename)
+    line = linecache.getline(filename, lineno, f.f_globals)
+    msg = '{}:{} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj)
+    logging.error(msg)
+
 
 if __name__ == "__main__":
     # TODO: Wrap in try catch block
@@ -12,9 +25,15 @@ if __name__ == "__main__":
                         datefmt='%H:%M:%S',
                         level=logging.DEBUG)
     logging.info("Starting Qt application")
-    app = QtWidgets.QApplication([])
-    window = MainWin()
-    window.resize(800, 600)
-    logging.info("Show window")
-    window.show()
-    sys.exit(app.exec_())
+
+    try:
+        app = QtWidgets.QApplication([])
+        main_window = MainWin()
+        main_window.resize(800, 600)
+        logging.info("Show main_window")
+        main_window.show()
+        d = 4/0
+        sys.exit(app.exec_())
+    except Exception as e:
+        log_error()
+        raise
