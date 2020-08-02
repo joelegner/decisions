@@ -5,7 +5,7 @@ import logging
 import settings
 
 
-class StartWin(QtWidgets.QWidget):
+class MainWin(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
