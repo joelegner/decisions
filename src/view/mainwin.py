@@ -13,9 +13,9 @@ class MainWin(QtWidgets.QWidget):
 
         # Add widgets
         self.hello = ["Hallo Welt", "Hei maailma", "Hola Mundo", "Привет мир"]
-        self.new_button = QtWidgets.QPushButton("Start a New Decision")
-        self.open_button = QtWidgets.QPushButton("Open a Decision File")
-        self.exit_button = QtWidgets.QPushButton("Exit")
+        self.new_button = QtWidgets.QPushButton("&New Decision")
+        self.open_button = QtWidgets.QPushButton("&Open Decision File")
+        self.exit_button = QtWidgets.QPushButton("E&xit")
 
         # Connect widgets to slots
         self.exit_button.clicked.connect(self.exit_button_click)

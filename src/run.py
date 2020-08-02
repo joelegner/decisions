@@ -28,9 +28,10 @@ if __name__ == "__main__":
     logging.info("Starting Qt application")
 
     try:
-        app = QtWidgets.QApplication([])
+        app = QtWidgets.QApplication(sys.argv)
         main_window = MainWin()
-        main_window.resize(800, 600)
+        main_window.resize(
+            settings.MAIN_WIN_SIZE[0], settings.MAIN_WIN_SIZE[1])
         logging.info("Show main_window")
         main_window.show()
         sys.exit(app.exec_())

@@ -138,3 +138,33 @@
 13:55:28.167 run.py:34 INFO Show main_window
 13:56:07.367 run.py:28 INFO Starting Qt application
 13:56:07.433 run.py:34 INFO Show main_window
+14:05:42.218 run.py:28 INFO Starting Qt application
+14:05:42.287 run.py:34 INFO Show main_window
+14:05:54.905 run.py:28 INFO Starting Qt application
+14:05:54.978 run.py:34 INFO Show main_window
+14:08:51.325 run.py:28 INFO Starting Qt application
+14:08:51.390 run.py:34 INFO Show main_window
+14:14:54.39 run.py:28 INFO Starting Qt application
+14:14:54.101 run.py:34 INFO Show main_window
+14:15:13.591 run.py:28 INFO Starting Qt application
+14:15:13.666 run.py:34 INFO Show main_window
+14:16:38.37 run.py:28 INFO Starting Qt application
+14:16:38.102 run.py:34 INFO Show main_window
+14:16:52.100 run.py:28 INFO Starting Qt application
+14:16:52.164 run.py:34 INFO Show main_window
+14:17:09.497 run.py:28 INFO Starting Qt application
+14:17:09.562 run.py:17 ERROR build/src/run.py:32 "main_window = MainWin()"): height() takes no arguments (1 given)
+14:17:17.181 run.py:28 INFO Starting Qt application
+14:17:17.249 run.py:17 ERROR build/src/run.py:32 "main_window = MainWin()"): 'PySide2.QtWidgets.QPushButton' object has no attribute 'setHeight'
+14:18:36.397 run.py:28 INFO Starting Qt application
+14:18:36.459 run.py:34 INFO Show main_window
+14:19:40.715 run.py:28 INFO Starting Qt application
+14:19:40.798 run.py:17 ERROR build/src/run.py:33 "main_window.resize(settings.MAIN_WIN_SIZE)"): 'PySide2.QtWidgets.QWidget.resize' called with wrong argument types:
+  PySide2.QtWidgets.QWidget.resize(tuple)
+Supported signatures:
+  PySide2.QtWidgets.QWidget.resize(PySide2.QtCore.QSize)
+  PySide2.QtWidgets.QWidget.resize(int, int)
+14:21:07.560 run.py:28 INFO Starting Qt application
+14:21:07.622 run.py:17 ERROR build/src/run.py:33 "main_window.resize(settings.MAIN_WIN_SIZE[0], MAIN_WIN_SIZE[1])"): name 'MAIN_WIN_SIZE' is not defined
+14:21:15.711 run.py:28 INFO Starting Qt application
+14:21:15.771 run.py:35 INFO Show main_window
