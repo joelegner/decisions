@@ -3,6 +3,7 @@ import sys
 from view.mainwin import MainWin
 import logging
 import linecache
+import settings
 
 
 def log_error():
@@ -19,7 +20,7 @@ def log_error():
 if __name__ == "__main__":
     # TODO: Wrap in try catch block
     # TODO: Send argv to the _run() function
-    logging.basicConfig(filename="decisions.log",
+    logging.basicConfig(filename=settings.LOGFILENAME,
                         filemode='a',
                         format='%(asctime)s.%(msecs)d %(filename)s:%(lineno)s %(levelname)s %(message)s',
                         datefmt='%H:%M:%S',
@@ -32,7 +33,6 @@ if __name__ == "__main__":
         main_window.resize(800, 600)
         logging.info("Show main_window")
         main_window.show()
-        d = 4/0
         sys.exit(app.exec_())
     except Exception as e:
         log_error()

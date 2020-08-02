@@ -118,3 +118,23 @@
 13:31:43.340 run.py:27 INFO Starting Qt application
 13:31:43.418 run.py:33 INFO Show main_window
 13:31:43.467 run.py:16 ERROR build/src/run.py:35 "d = 4/0"): division by zero
+13:37:45.209 run.py:27 INFO Starting Qt application
+13:37:45.299 run.py:16 ERROR build/src/run.py:33 "main_window.setResizeMode(QQuickView.SizeRootObjectToView)"): 'MainWin' object has no attribute 'setResizeMode'
+13:40:45.627 run.py:27 INFO Starting Qt application
+13:40:45.695 run.py:33 INFO Show main_window
+13:43:50.749 run.py:28 INFO Starting Qt application
+13:43:50.814 run.py:34 INFO Show main_window
+13:54:26.743 run.py:28 INFO Starting Qt application
+13:54:26.812 run.py:17 ERROR build/src/run.py:32 "main_window = MainWin()"): name 'exit_button' is not defined
+13:54:39.402 run.py:28 INFO Starting Qt application
+13:54:39.463 run.py:17 ERROR build/src/run.py:32 "main_window = MainWin()"): name 'say_hello' is not defined
+13:54:54.285 run.py:28 INFO Starting Qt application
+13:54:54.345 run.py:17 ERROR build/src/run.py:32 "main_window = MainWin()"): name 'close_main_window' is not defined
+13:55:14.99 run.py:28 INFO Starting Qt application
+13:55:14.161 run.py:17 ERROR build/src/run.py:32 "main_window = MainWin()"): name 'close_main_window' is not defined
+13:55:23.796 run.py:28 INFO Starting Qt application
+13:55:23.856 run.py:34 INFO Show main_window
+13:55:28.106 run.py:28 INFO Starting Qt application
+13:55:28.167 run.py:34 INFO Show main_window
+13:56:07.367 run.py:28 INFO Starting Qt application
+13:56:07.433 run.py:34 INFO Show main_window
