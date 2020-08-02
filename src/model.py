@@ -1,5 +1,5 @@
 from json import JSONEncoder
-from sqlalchemy import Column, String, Integer, Sequence, ForeignKey
+from sqlalchemy import Column, String, Integer, Sequence, ForeignKey, Float
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -18,6 +18,13 @@ class Criterium(Base):
 
     def __repr__(self):
         return "<Criterium(id=%s, name='%s')>" % (self.id, self.name)
+
+
+class CriteriaComparison(Base):
+    __tablename__ = 'criteria_relationship'
+    left_id = Column(Integer, ForeignKey('criteria.id'), primary_key=True)
+    right_id = Column(Integer, ForeignKey('criteria.id'), primary_key=True)
+    value = Column(Float, default=1.0)
 
 
 class Decision(Base):
@@ -39,6 +46,15 @@ class Decision(Base):
     def save(self, session):
         session.commit()
 
+    def remake_relationships(self, session):
+        # Add a new relationship when none exists
+        criteria_ids = [c.id for c in self.criteria]
+        for left_id in criteria_ids:
+            for right_id in criteria_ids[left_id:]:
+                if not left_id == right_id:
+                    print("TODO: Add relationship (%d, %d)" %
+                          (left_id, right_id))
+
 
 if __name__ == "__main__":
     from sqlalchemy import create_engine
@@ -54,5 +70,9 @@ if __name__ == "__main__":
     print(decision)
     decision.add_criterium("Fun to Use")
     decision.add_criterium("Cheap")
+    decision.add_criterium("Colorful")
+    decision.add_criterium("Snappy Name")
     session.commit()
-    print(decision.criteria)
+    decision.remake_relationships(session)
+    session.commit()
+    print(session.query(CriteriaComparison).all())
