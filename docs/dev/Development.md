@@ -46,11 +46,17 @@ From here out the program's behavior is dictated by the event that occurs. Event
 - [ ] User settings.
 - [ ] Infinite undo/redo.
 
-## File Format
+## File Handling
 
-We will use SQLite for the [application file format](https://sqlite.org/appfileformat.html) and for user settings.
+We use SQLite for the [application file format](https://sqlite.org/appfileformat.html) and for user settings.
 
-We will use [SQLAlchemy](https://docs.sqlalchemy.org/en/13/orm/tutorial.html) for the Object Relational Mapper (ORM) for the application file format and possibly user settings.
+We use [SQLAlchemy](https://docs.sqlalchemy.org/en/13/orm/tutorial.html) for the Object Relational Mapper (ORM) for the application file format and possibly user settings.
+
+Creating a new decision:
+
+1. MainWin prompts to save unsaved changes.
+
+1. MainWin creates a new DecisionModel instance.
 
 ## SQLAlchemy Tayloring
 

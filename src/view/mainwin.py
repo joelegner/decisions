@@ -3,13 +3,17 @@ from PySide2 import QtCore
 import random
 import logging
 import settings
+from model import Decision
 
 
 class MainWin(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
-        self.cur_filename = None
+        self.cur_filename = ""
+        self.saved = False
+        self.changed = False
+        self.decision = self.new_decision()
 
         self.setWindowTitle("Decisions %s" % settings.VERSION)
 
@@ -43,3 +47,8 @@ class MainWin(QtWidgets.QWidget):
 
     def exit_button_click(self):
         QtWidgets.QApplication.quit()
+
+    def new_decision(self):
+        if self.changed and not self.saved:
+            print("TODO: Prompt to save unsaved changes")
+        return Decision()
