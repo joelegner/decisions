@@ -9,6 +9,8 @@ class MainWin(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
+        self.cur_filename = None
+
         self.setWindowTitle("Decisions %s" % settings.VERSION)
 
         # Add widgets
