@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="173.16"
    inkscape:export-xdpi="173.16"
-   inkscape:export-filename="/Users/joelegner/Google Drive/Projects/decisions/docs/dev/img/svg/logo.png"
+   inkscape:export-filename="/Users/joelegner/Google Drive/Projects/decisions/docs/dev/img/raster/logo.svg.png"
    sodipodi:docname="logo.svg"
    inkscape:version="1.0 (4035a4f, 2020-05-01)"
    id="svg8"
@@ -86,9 +86,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="95.965699"
-     inkscape:cx="59.331854"
-     inkscape:zoom="1.4"
+     inkscape:cy="87.67676"
+     inkscape:cx="209.29144"
+     inkscape:zoom="5.6"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -125,7 +125,7 @@
            style="font-size:25.4px;text-align:center;text-anchor:middle">decisions
 </tspan></tspan></text>
     <g
-       transform="matrix(0.0222892,0.00292508,-0.00257405,0.0208691,249.66418,-26.937659)"
+       transform="matrix(0.01653084,0.00619901,-0.00590884,0.01559294,218.27621,19.608076)"
        id="g150"
        style="fill:#0984e3;fill-opacity:1">
       <g
@@ -204,7 +204,7 @@
        id="text16-7"
        style="font-style:normal;font-weight:normal;font-size:10.58329999999999949px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18-6);fill:#000000;fill-opacity:1;stroke:none;" />
     <text
-       transform="translate(-0.56696429,12.662202)"
+       transform="translate(-0.23623513,12.567708)"
        style="font-style:normal;font-weight:normal;font-size:10.58329999999999949px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18);fill:#74b9ff;fill-opacity:1;stroke:none;"
        id="text16"
        xml:space="preserve"><tspan
