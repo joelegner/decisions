@@ -1,6 +1,6 @@
 from PySide2 import QtWidgets
 import sys
-from view.mainwin import MainWin
+from view.startwin import StartWin
 import logging
 import linecache
 import settings
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     try:
         app = QtWidgets.QApplication(sys.argv)
-        main_window = MainWin()
+        main_window = StartWin()
         main_window.resize(
             settings.MAIN_WIN_SIZE[0], settings.MAIN_WIN_SIZE[1])
         logging.info("Show main_window")
