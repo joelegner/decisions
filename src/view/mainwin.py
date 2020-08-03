@@ -27,6 +27,7 @@ class MainWin(QtWidgets.QWidget):
         self.recent_files_listview = QtWidgets.QListView()
 
         # Connect widgets to slots
+        self.open_button.clicked.connect(self.open_button_click)
         self.exit_button.clicked.connect(self.exit_button_click)
 
         # Layout widgets
@@ -48,7 +49,17 @@ class MainWin(QtWidgets.QWidget):
     def exit_button_click(self):
         QtWidgets.QApplication.quit()
 
+    def open_button_click(self):
+        if self.changed and not self.saved:
+            print("TODO: Prompt to save unsaved changes")
+        fileName = QtWidgets.QFileDialog.getOpenFileName(
+            self, "Open Image", "%", "Decision Files (*.dec)")
+        breakpoint()
+        print("Call load from file function and pass filename: %s" %
+              fileName[0])
+
     def new_decision(self):
         if self.changed and not self.saved:
             print("TODO: Prompt to save unsaved changes")
-        return Decision()
+        self.decision = Decision()
+        return self.decision

@@ -83,7 +83,7 @@ class Decision(Base):
 if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
-    engine = create_engine('sqlite:///testfile.db', echo=True)
+    engine = create_engine('sqlite:///testfile.dec', echo=True)
     decision = Decision(name="Software Project")
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
