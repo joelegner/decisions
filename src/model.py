@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 import logging
 from sqlalchemy import create_engine
+from sqlalchemy import orm
 from sqlalchemy.orm import sessionmaker
 import os
 
@@ -44,6 +45,10 @@ class Decision(Base):
     criteria = relationship("Criterium")
     criteria_comparisons = relationship("CriteriaComparison")
 
+    @orm.reconstructor
+    def init_on_load(self):
+        self.session = None
+
     def __repr__(self):
         return "<Decision(id=%s, name='%s')>" % (self.id, self.name)
 
@@ -52,11 +57,11 @@ class Decision(Base):
         new_criterium.decision = self
         return new_criterium
 
-    def save(self, session):
-        session.commit()
+    def save(self):
+        self.session.commit()
 
-    def get_or_add_relationship(self, session, left_id, right_id):
-        instance = session.query(CriteriaComparison).filter_by(
+    def get_or_add_relationship(self, left_id, right_id):
+        instance = self.session.query(CriteriaComparison).filter_by(
             left_id=left_id, right_id=right_id).first()
         if instance:
             return instance
@@ -68,11 +73,11 @@ class Decision(Base):
             new_comparison.decision = self
             return new_comparison, True
 
-    def remake_relationships(self, session):
+    def remake_relationships(self):
         # Add a new relationship when none exists
         criteria_ids = [c.id for c in self.criteria]
 
-        comparisons = session.query(CriteriaComparison).all()
+        comparisons = self.session.query(CriteriaComparison).all()
 
         if len(comparisons):
             print(comparisons)
@@ -80,7 +85,7 @@ class Decision(Base):
         for left_id in criteria_ids:
             for right_id in criteria_ids[left_id:]:
                 if not left_id == right_id:
-                    self.get_or_add_relationship(session, left_id, right_id)
+                    self.get_or_add_relationship(left_id, right_id)
 
 
 def open_decision_file(filename):
@@ -94,26 +99,29 @@ def open_decision_file(filename):
         decision_query = session.query(Decision)
         if len(decision_query.all()) == 1:
             decision = decision_query.all()[0]
+            decision.session = session
     else:
         logging.warn("Attempted to load file %s but it does not exist.")
     return decision
 
 
 if __name__ == "__main__":
-    os.remove("testfile.dec")
+    if os.path.exists("testfile.dec"):
+        os.remove("testfile.dec")
     engine = create_engine('sqlite:///testfile.dec', echo=True)
-    decision = Decision(name="Software Project")
     Base.metadata.create_all(engine)
+    decision = Decision(name="Software Project")
     Session = sessionmaker(bind=engine)
     session = Session()
     session.add(decision)
-    session.commit()
+    decision.session = session
+    decision.session.commit()
     decision.add_criterium("Fun to Use")
     decision.add_criterium("Cheap")
     decision.add_criterium("Colorful")
     decision.add_criterium("Snappy Name")
-    session.commit()
-    decision.remake_relationships(session)
-    session.commit()
-    decision.remake_relationships(session)
-    session.commit()
+    decision.session.commit()
+    decision.remake_relationships()
+    decision.session.commit()
+    decision.remake_relationships()
+    decision.session.commit()

@@ -58,6 +58,9 @@ class MainWin(QtWidgets.QWidget):
         if len(fileName):
             decision = open_decision_file(fileName[0])
             if decision is not None:
+                self.setWindowTitle("%s" % decision.name)
+                logging.info("Loaded decision %s from %s" %
+                             (decision, fileName))
                 print("TODO: Update main window to view decision")
 
     def new_decision(self):
