@@ -3,6 +3,9 @@ from sqlalchemy import Column, String, Integer, Sequence, ForeignKey, Float, Boo
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 import logging
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+import os
 
 
 Base = declarative_base()
@@ -80,9 +83,24 @@ class Decision(Base):
                     self.get_or_add_relationship(session, left_id, right_id)
 
 
+def open_decision_file(filename):
+    "Opens an existing decision file and returns the Decision object."
+    decision = None
+    if os.path.isfile(filename):
+        logging.info("File %s exists. Attempting to connect to it now.")
+        engine = create_engine('sqlite:///%s' % filename, echo=True)
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        decision_query = session.query(Decision)
+        if len(decision_query.all()) == 1:
+            decision = decision_query.all()[0]
+    else:
+        logging.warn("Attempted to load file %s but it does not exist.")
+    return decision
+
+
 if __name__ == "__main__":
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import sessionmaker
+    os.remove("testfile.dec")
     engine = create_engine('sqlite:///testfile.dec', echo=True)
     decision = Decision(name="Software Project")
     Base.metadata.create_all(engine)

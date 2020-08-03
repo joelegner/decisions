@@ -4,6 +4,7 @@ import random
 import logging
 import settings
 from model import Decision
+from model import open_decision_file
 
 
 class MainWin(QtWidgets.QWidget):
@@ -54,9 +55,10 @@ class MainWin(QtWidgets.QWidget):
             print("TODO: Prompt to save unsaved changes")
         fileName = QtWidgets.QFileDialog.getOpenFileName(
             self, "Open Image", "%", "Decision Files (*.dec)")
-        breakpoint()
-        print("Call load from file function and pass filename: %s" %
-              fileName[0])
+        if len(fileName):
+            decision = open_decision_file(fileName[0])
+            if decision is not None:
+                print("TODO: Update main window to view decision")
 
     def new_decision(self):
         if self.changed and not self.saved:
