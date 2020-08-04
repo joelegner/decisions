@@ -54,7 +54,7 @@ class MainWin(QtWidgets.QWidget):
         if self.changed and not self.saved:
             print("TODO: Prompt to save unsaved changes")
         fileName = QtWidgets.QFileDialog.getOpenFileName(
-            self, "Open Image", "%", "Decision Files (*.dec)")
+            self, "Open Decision", "%", "Decision Files (*.dec)")
         if len(fileName):
             decision = open_decision_file(fileName[0])
             if decision is not None:
