@@ -7,6 +7,15 @@ from model import Decision
 from model import open_decision_file
 
 
+def get(url, qsargs=None, timeout=5.0):
+    """Get something
+
+:param qsargs: ARguments
+:type qsargs: string
+:rtype: None
+"""
+
+
 class MainWin(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()

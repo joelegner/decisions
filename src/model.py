@@ -12,8 +12,8 @@ class Criterium(persistent.Persistent):
     def __init__(self, name="Unnamed Criterium"):
         self.name = name
 
-    def __repr__(self):
-        return "<Criterium(oid=%s, name='%s')>" % (self._p_oid, self.name)
+    def __str__(self):
+        return "%s" % (self.name)
 
 
 class Comparison(persistent.Persistent):
@@ -40,14 +40,20 @@ class Decision(persistent.Persistent):
 
     def __init__(self, name="Undefined Decision"):
         self.name = name
+        self.criteria = []
 
     def __repr__(self):
         return "<Decision(oid=%s, name='%s')>" % (self._p_oid, self.name)
 
     def add_criterium(self, name):
         new_criterium = Criterium(name=name)
-        new_criterium.decision = self
+        self.criteria.append(new_criterium)
+        self._p_changed = True
         return new_criterium
+
+    def add_criteria(self, criteria):
+        for c in criteria:
+            self.add_criterium(c)
 
     def save(self):
         pass
@@ -58,20 +64,17 @@ if __name__ == "__main__":
     db = ZODB.DB(storage)
     connection = db.open()
     root = connection.root
-    new_decision = Decision("Select Graph Database to Use")
-    root.decision = new_decision
+    d = Decision("Select Graph Database to Use")
+    c1 = Criterium("Fun")
+    c2 = Criterium("Fast")
+    c3 = Criterium("Reliable")
+    d.add_criteria([c1, c2, c3])
+    root.decision = d
     transaction.commit()
 
-    print("Saved to database. Now let's try loading it.")
-
-    old_decision = root.decision
-    print(new_decision.name)
-    print(old_decision.name)
-
-    print("Change the name.")
-    old_decision.name = "Joe Legner"
-    transaction.commit()
-    print(new_decision.name)
-    print(old_decision.name)
+    for c in d.criteria:
+        print(c)
+        print(c._p_oid)
+        print("------------------")
 
     storage.close()
