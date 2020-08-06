@@ -37,6 +37,7 @@ From here out the program's behavior is dictated by the event that occurs. Event
 - [ ] User manual.
 - [ ] SQLite for application file format.
 - [ ] SQLAlchemy for ORM.
+- [ ] 100 code coverage testing.
 
 ### Functional
 
@@ -62,3 +63,7 @@ Creating a new decision:
 
 domain model
 : DecisionModel class.
+
+# Testing
+
+The Python 3.8.5 standard `unittest` library will be used for testing.

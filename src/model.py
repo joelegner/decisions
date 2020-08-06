@@ -4,7 +4,7 @@ import persistent
 import transaction
 import ZODB
 import ZODB.FileStorage
-import settings
+from . import settings
 
 
 class Criterium(persistent.Persistent):

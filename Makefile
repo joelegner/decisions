@@ -17,3 +17,14 @@ build: clean
 clean:
 	@echo "Cleaning build directory."
 	find ./build -exec rm {} \;
+
+.PHONY: test
+test:
+	coverage run -m unittest discover
+	coverage report
+	coverage html
+
+.PHONY: coverage
+coverage: test
+	open htmlcov/index.html
+	
