@@ -66,4 +66,12 @@ domain model
 
 # Testing
 
-The Python 3.8.5 standard `unittest` library will be used for testing.
+[Coverage 5.2.1](https://coverage.readthedocs.io/en/coverage-5.2.1/) and Python 3.8.5 `unittest` are used for testing.
+
+```zsh
+# Run tests
+$ make test
+
+# Run tests and open browser to see Coverage HTML results
+$ make coverage
+```
