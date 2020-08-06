@@ -45,6 +45,9 @@ class Decision(persistent.Persistent):
     def __repr__(self):
         return "<Decision(oid=%s, name='%s')>" % (self._p_oid, self.name)
 
+    def __str__(self):
+        return "%s" % (self.name)
+
     def add_criterium(self, name):
         new_criterium = Criterium(name=name)
         self.criteria.append(new_criterium)

@@ -3,3 +3,4 @@ build/*
 *.log
 testfile.*
 test_database*
+htmlcov/*

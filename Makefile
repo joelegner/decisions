@@ -20,11 +20,8 @@ clean:
 
 .PHONY: test
 test:
-	coverage run -m unittest discover
-	coverage report
-	coverage html
+	pipenv run pytest --cov=src --cov-report html
 
 .PHONY: coverage
 coverage: test
 	open htmlcov/index.html
-	
