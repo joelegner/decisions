@@ -57,24 +57,3 @@ class Decision(persistent.Persistent):
 
     def save(self):
         pass
-
-
-if __name__ == "__main__":
-    storage = ZODB.FileStorage.FileStorage(settings.DB_PATH_FILENAME)
-    db = ZODB.DB(storage)
-    connection = db.open()
-    root = connection.root
-    d = Decision("Select Graph Database to Use")
-    c1 = Criterium("Fun")
-    c2 = Criterium("Fast")
-    c3 = Criterium("Reliable")
-    d.add_criteria([c1, c2, c3])
-    root.decision = d
-    transaction.commit()
-
-    for c in d.criteria:
-        print(c)
-        print(c._p_oid)
-        print("------------------")
-
-    storage.close()

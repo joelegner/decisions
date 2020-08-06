@@ -36,7 +36,7 @@ From here out the program's behavior is dictated by the event that occurs. Event
 
 - [ ] User manual.
 - [ ] SQLite for application file format.
-- [ ] SQLAlchemy for ORM.
+- [ ] ZODB for storage.
 - [ ] 100 code coverage testing.
 
 ### Functional
@@ -49,22 +49,13 @@ From here out the program's behavior is dictated by the event that occurs. Event
 
 ## File Handling
 
-We use SQLite for the [application file format](https://sqlite.org/appfileformat.html) and for user settings.
+[ZODB](https://zodb-docs.readthedocs.io/en/latest/) is used for file storage. This has some nice side-effects:
 
-We use [SQLAlchemy](https://docs.sqlalchemy.org/en/13/orm/tutorial.html) for the Object Relational Mapper (ORM) for the application file format and possibly user settings.
+- Extremely clean code. Use ordinary Python classes derived from `persistent.Persistent`.
+- Undo capabilities. TODO: Research how to do this.
+- [ACID](<https://en.wikipedia.org/wiki/ACID_(computer_science)>) transaction protect data integrity.
 
-Creating a new decision:
-
-1. MainWin prompts to save unsaved changes.
-
-1. MainWin creates a new DecisionModel instance.
-
-## SQLAlchemy Tayloring
-
-domain model
-: DecisionModel class.
-
-# Testing
+## Testing
 
 [Coverage 5.2.1](https://coverage.readthedocs.io/en/coverage-5.2.1/) and Python 3.8.5 `unittest` are used for testing.
 
