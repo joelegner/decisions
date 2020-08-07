@@ -38,6 +38,9 @@ From here out the program's behavior is dictated by the event that occurs. Event
 - [ ] SQLite for application file format.
 - [ ] ZODB for storage.
 - [ ] 100 code coverage testing.
+- [ ] Config stored in environment variables.
+- [ ] Config isolated from code.
+- [ ] Dependencies vendored-in.
 
 ### Functional
 
