@@ -1,5 +1,5 @@
-from . import model
-from . import settings
+from decisions import model
+from decisions import settings
 import persistent
 import transaction
 import unittest
