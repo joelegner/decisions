@@ -5,12 +5,12 @@ export PIPENV_IGNORE_VIRTUALENVS=1
 .PHONY: run
 run: build
 	@echo "Starting Application."
-	pipenv run python build/src/run.py
+	pipenv run python decisions
 
 .PHONY: build
 build: clean
 	@echo "Starting build."
-	cp -r src build
+	cp -r decisions build
 	@echo "Build complete."
 
 .PHONY: clean
@@ -20,7 +20,7 @@ clean:
 
 .PHONY: test
 test:
-	pipenv run pytest --cov=src --cov-report html
+	pipenv run pytest --cov=decisions --cov-report html
 
 .PHONY: coverage
 coverage: test
