@@ -2,17 +2,19 @@
 
 ## Class Diagram
 
-![Class Diagram](img/yed/class_diagram.png)
+![Class Diagrm](img/yed/class_diagram.png)
 
 ## Program Flow
 
 <img src="img/yed/screens.png" width="200">
 
-## Program Start
+## rram Start
 
 1. The `__main__()` function initiate an `app`.
 
-1. `app` initiates `controller`.
+1.
+
+`app` initiates `controller`.
 
 1. `controller` initiates `model` and adds itself as the model's `controller`.
 

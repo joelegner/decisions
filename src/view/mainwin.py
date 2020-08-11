@@ -4,7 +4,7 @@ import random
 import logging
 import settings
 from model import Decision
-from model import open_decision_file
+from model import connection_from_filename
 
 
 def get(url, qsargs=None, timeout=5.0):
@@ -19,6 +19,8 @@ def get(url, qsargs=None, timeout=5.0):
 class MainWin(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+
+        self.conn = None
 
         self.cur_filename = ""
         self.saved = False
@@ -64,12 +66,14 @@ class MainWin(QtWidgets.QWidget):
             print("TODO: Prompt to save unsaved changes")
         fileName = QtWidgets.QFileDialog.getOpenFileName(
             self, "Open Decision", "%", "Decision Files (*.dec)")
-        if len(fileName):
-            decision = open_decision_file(fileName[0])
-            if decision is not None:
-                self.setWindowTitle("%s" % decision.name)
+        if len(fileName[0]):
+            if self.conn is not None:
+                del self.conn
+            self.conn = connection_from_filename(fileName[0])
+            if self.decision is not None:
+                self.setWindowTitle("%s" % self.decision.name)
                 logging.info("Loaded decision %s from %s" %
-                             (decision, fileName))
+                             (self.decision, fileName))
                 print("TODO: Update main window to view decision")
 
     def new_decision(self):

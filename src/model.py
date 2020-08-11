@@ -4,7 +4,16 @@ import persistent
 import transaction
 import ZODB
 import ZODB.FileStorage
-from . import settings
+import settings
+
+
+class DatabaseConnection:
+
+    def __init__(self, filename):
+        self.storage = ZODB.FileStorage.FileStorage(filename)
+        self.db = ZODB.DB(self.storage)
+        self.connection = self.db.open()
+        self.root = self.connection.root
 
 
 class Criterium(persistent.Persistent):
@@ -38,6 +47,8 @@ class Comparison(persistent.Persistent):
 
 class Decision(persistent.Persistent):
 
+    name = "Undefined Decision"
+
     def __init__(self, name="Undefined Decision"):
         self.name = name
         self.criteria = []
@@ -60,3 +71,8 @@ class Decision(persistent.Persistent):
 
     def save(self):
         pass
+
+
+def connection_from_filename(filename):
+    conn = DatabaseConnection(filename)
+    return conn, conn.root.decision

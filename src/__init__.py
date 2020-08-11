@@ -1,1 +1,2 @@
-pass
+import settings
+import model
