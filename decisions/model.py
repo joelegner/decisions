@@ -4,7 +4,6 @@ import persistent
 import transaction
 import ZODB
 import ZODB.FileStorage
-from . import settings
 
 
 class DatabaseConnection:
