@@ -8,13 +8,9 @@
 
 <img src="img/yed/screens.png" width="200">
 
-## rram Start
-
 1. The `__main__()` function initiate an `app`.
 
-1.
-
-`app` initiates `controller`.
+1. `app` initiates `controller`.
 
 1. `controller` initiates `model` and adds itself as the model's `controller`.
 
@@ -37,6 +33,7 @@ From here out the program's behavior is dictated by the event that occurs. Event
 ### Non-Functional
 
 - [ ] User manual.
+- [ ] Type hints and type-checking.
 - [ ] SQLite for application file format.
 - [ ] ZODB for storage.
 - [ ] 100 code coverage testing.
@@ -71,3 +68,9 @@ $ make test
 # Run tests and open browser to see Coverage HTML results
 $ make coverage
 ```
+
+# Static Type Checking
+
+It seems like a good idea to do some static tape checking for quality control purposes. Here is a list of a few options to choose from.
+
+- [mypy](http://mypy-lang.org)
