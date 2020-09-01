@@ -41,6 +41,7 @@ class MainWin(QtWidgets.QWidget):
         # Connect widgets to slots
         self.open_button.clicked.connect(self.open_button_click)
         self.exit_button.clicked.connect(self.exit_button_click)
+        self.new_button.clicked.connect(self.new_button_click)
 
         # Layout widgets
         self.leftside = QtWidgets.QVBoxLayout()
@@ -81,3 +82,14 @@ class MainWin(QtWidgets.QWidget):
             print("TODO: Prompt to save unsaved changes")
         self.decision = Decision()
         return self.decision
+
+
+    def new_button_click(self):
+        text, ok = QtWidgets.QInputDialog().getText(self, "New Decision",
+            "Decision Title:", QtWidgets.QLineEdit.Normal,
+            "Untitled Decision")
+        if ok and text:
+            self.decision = Decision(name=text)
+            return self.decision
+        else:
+            return None
